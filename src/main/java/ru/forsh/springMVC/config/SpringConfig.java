@@ -13,6 +13,10 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
+
+/*Сканирование происходит благодаря аннотации @ComponentScan.
+В Sping Boot приложении она явно не прописывается, но содержится внутри
+аннотации @SpringBootApplication, с помощью которой аннотирован главный класс приложения. */
 @ComponentScan("ru.forsh.springMVC")
 
 /*@EnableWebMvc is equivalent to <mvc:annotation-driven /> in XML.
