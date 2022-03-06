@@ -33,6 +33,7 @@ public class PeopleController {
 
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("person") Person person){
+
         return "people/new";
     }
 
@@ -40,5 +41,11 @@ public class PeopleController {
     public String create(@ModelAttribute("person") Person person){
         personDAO.save(person);
         return "redirect:/people";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id){
+        model.addAttribute("person", personDAO.show(id));
+        return "people/edit";
     }
 }
