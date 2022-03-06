@@ -71,6 +71,14 @@
       <scope>provided</scope>
     </dependency>
 
+
+    <!-- Зависимость для валидации форм. Например корректный ввод имейла или возвраста -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.6.Final</version>
+    </dependency>
+
   </dependencies>
 
   <build>

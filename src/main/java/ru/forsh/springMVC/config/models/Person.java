@@ -1,12 +1,26 @@
 package ru.forsh.springMVC.config.models;
 
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Person {
     private int id;
+
+    @NotEmpty(message = "Введите имя")
+    @Size(min = 2, max = 30, message = "Имя должно быть от 2х до 30 знаков")
     private String name;
 
+    @NotEmpty(message = "Почта не должна быть пустой")
+    @Email(message = "email должен быть корректным")
+    private String email;
 
-    public Person(){
+    @Min(value = 0, message = "Возраст указан некорректно")
+    private int age;
+
+    public Person() {
 
     }
 
@@ -32,9 +46,6 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-
-    private String email;
-    private int age;
 
     public int getId() {
         return id;
